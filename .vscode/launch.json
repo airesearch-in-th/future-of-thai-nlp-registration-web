@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python: Django",
+            "name": "Python: Django Run Server",
             "type": "python",
             "request": "launch",
             "program": "${workspaceFolder}/manage.py",
@@ -19,19 +19,30 @@
             }
         },
         {
+            "name": "Python: Django Run Server (with reload)",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/manage.py",
+            "args": [
+                "runserver"
+            ],
+            "django": true,
+            "env": {
+                "DJANGO_ENV": "Debug"
+            }
+        },
+        {
             "name": "Python: Django Shell",
             "type": "python",
             "request": "launch",
             "program": "${workspaceFolder}/manage.py",
             "args": [
-                "runserver",
-                "--noreload"
+                "shell"
             ],
             "django": true,
             "env": {
                 "DJANGO_ENV": "Debug"
             },
-            // "console": "internalConsole"
         }
     ]
 }
