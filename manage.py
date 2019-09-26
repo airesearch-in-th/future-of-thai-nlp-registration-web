@@ -1,10 +1,14 @@
 #!/usr/bin/env python
 """Django's command-line utility for administrative tasks."""
+import dotenv
 import os
 import sys
 
 
 def main():
+    # Select and read environment variables from .env file
+    dotenv.read_dotenv(os.path.join(os.path.dirname(__file__), '.env' if os.environ['DJANGO_ENV'].lower() == 'production' else '.env.debug'), override=True)
+
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'future_of_thainlp.settings')
     try:
         from django.core.management import execute_from_command_line

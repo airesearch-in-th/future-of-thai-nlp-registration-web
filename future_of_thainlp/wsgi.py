@@ -7,9 +7,13 @@ For more information on this file, see
 https://docs.djangoproject.com/en/2.2/howto/deployment/wsgi/
 """
 
+import dotenv
 import os
 
 from django.core.wsgi import get_wsgi_application
+
+# Select and read environment variables from .env file
+dotenv.read_dotenv(os.path.join(os.path.dirname(__file__), '.env' if os.environ['DJANGO_ENV'].lower() == 'production' else '.env.debug'), override=True)
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'future_of_thainlp.settings')
 
