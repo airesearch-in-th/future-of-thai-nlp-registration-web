@@ -1,1 +1,2 @@
 Django==2.1.*
+django-dotenv==1.4.*
