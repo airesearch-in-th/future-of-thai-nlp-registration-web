@@ -32,6 +32,7 @@ ALLOWED_HOSTS.append(os.environ['DJANGO_ALLOWED_HOST'])
 # Application definition
 
 INSTALLED_APPS = [
+    'registration.apps.RegistrationConfig'
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
