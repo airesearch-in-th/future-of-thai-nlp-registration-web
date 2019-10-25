@@ -1,0 +1,9 @@
+{% if participant_list %}
+    <ul>
+    {% for participant in participant_list %}
+        <li><a href="/participant/{{ participant.id }}/">{{ participant.full_name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
